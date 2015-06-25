@@ -4,7 +4,6 @@ HTTP agent with smart socket pool.
 
 [![npm version](https://badge.fury.io/js/http-pooling-agent.svg)](http://badge.fury.io/js/http-pooling-agent)
 [![Build Status](https://travis-ci.org/telefonica/node-http-pooling-agent.svg)](https://travis-ci.org/telefonica/node-http-pooling-agent)
-[![Coverage Status](https://img.shields.io/coveralls/telefonica/node-http-pooling-agent.svg)](https://coveralls.io/r/telefonica/node-http-pooling-agent)
 
 The HTTP agent is based on original [node HTTP agent](https://github.com/joyent/node/blob/f3189ace6b5e31a874df421ac2f74da0e77cb14d/lib/_http_agent.js) with some modifications in order to:
 * Do not close sockets if there is no pending HTTP request. Default HTTP agent only reuses an open socket if there is a request already waiting for delivery. However, in stress situations, it is probable to close a socket that could be reused for a new request that is about to reach, degrading the performance and exhausting the available sockets to open new connections.
